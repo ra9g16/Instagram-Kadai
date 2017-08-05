@@ -35,9 +35,7 @@
 		29E8F81E1F3618E000BCE896 /* AdobeCreativeSDKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29E8F81C1F3618E000BCE896 /* AdobeCreativeSDKCore.framework */; };
 		29E8F81F1F3618E000BCE896 /* AdobeCreativeSDKImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29E8F81D1F3618E000BCE896 /* AdobeCreativeSDKImage.framework */; };
 		29E8F8211F3618E600BCE896 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29E8F8201F3618E600BCE896 /* GoogleService-Info.plist */; };
-		29E8F8221F36190800BCE896 /* AdobeCreativeSDKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29E8F81C1F3618E000BCE896 /* AdobeCreativeSDKCore.framework */; };
 		29E8F8231F36190800BCE896 /* AdobeCreativeSDKCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 29E8F81C1F3618E000BCE896 /* AdobeCreativeSDKCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		29E8F8241F36190C00BCE896 /* AdobeCreativeSDKImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29E8F81D1F3618E000BCE896 /* AdobeCreativeSDKImage.framework */; };
 		29E8F8251F36190C00BCE896 /* AdobeCreativeSDKImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 29E8F81D1F3618E000BCE896 /* AdobeCreativeSDKImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2EAE138C21CABA9B7707E9E5 /* Pods_Instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E57E00122E4FAB84DB3B103A /* Pods_Instagram.framework */; };
 /* End PBXBuildFile section */
@@ -111,9 +109,7 @@
 				2937D2C01F31160F0025B597 /* libsqlite3.0.tbd in Frameworks */,
 				2937D2BE1F3116040025B597 /* libz.1.2.5.tbd in Frameworks */,
 				2937D2BC1F3115FA0025B597 /* libz.tbd in Frameworks */,
-				29E8F8221F36190800BCE896 /* AdobeCreativeSDKCore.framework in Frameworks */,
 				2937D2BA1F3115EA0025B597 /* libc++.tbd in Frameworks */,
-				29E8F8241F36190C00BCE896 /* AdobeCreativeSDKImage.framework in Frameworks */,
 				2EAE138C21CABA9B7707E9E5 /* Pods_Instagram.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
