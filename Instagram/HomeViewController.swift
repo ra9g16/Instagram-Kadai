@@ -121,6 +121,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // セル内のボタンのアクションをソースコードで設定する
         cell.likeButton.addTarget(self, action:#selector(handleButton(sender:event:)), for:  UIControlEvents.touchUpInside)
         
+        // セル内のcommentボタンのアクションをソースコードで設定する
+        cell.commentButton.addTarget(self, action:#selector(handleCommentButton(sender:event:)), for:  UIControlEvents.touchUpInside)
+        
         return cell
     }
     
@@ -170,7 +173,38 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
         }
     }
-
+    
+    // セル内のcommentボタンがタップされた時に呼ばれるメソッド
+    func handleCommentButton(sender: UIButton, event:UIEvent) {
+        print("DEBUG_PRINT: commentボタンがタップされました。")
+        // タップされたセルのインデックスを求める
+        let touch = event.allTouches?.first
+        let point = touch!.location(in: self.tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
+        
+        let cell = tableView.cellForRow(at: indexPath!)  as! PostTableViewCell
+        
+        let comment = cell.commentTextField.text!
+        
+        // 配列からタップされたインデックスのデータを取り出す
+        let postData = postArray[indexPath!.row]
+        
+        let userName = FIRAuth.auth()?.currentUser?.displayName
+        
+        var commentSet = Dictionary<String, String>()
+        commentSet["userName"] = userName!
+        commentSet["comment"] = comment
+        
+        postData.comments.append(commentSet)
+        
+        // 増えたcommentsをFirebaseに保存する
+        let postRef = FIRDatabase.database().reference().child(Const.PostPath).child(postData.id!)
+        let comments = ["comments": postData.comments]
+        postRef.updateChildValues(comments)
+        
+        //textFieldの文字を空に
+        cell.commentTextField.text = ""
+    }
     /*
     // MARK: - Navigation
 

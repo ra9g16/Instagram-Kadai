@@ -6,6 +6,8 @@
 	<string>本アプリは、画像の投稿及び編集のため、フォトライブラリへのアクセスを求めます。</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
+	<key>NSCameraUsageDescription</key>
+	<string>本アプリは、画像の投稿及び編集のため、カメラの使用許可を求めます。</string>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>

@@ -14,6 +14,9 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var dataLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
+    @IBOutlet weak var commentTextField: UITextField!
+    @IBOutlet weak var commentButton: UIButton!
+    @IBOutlet weak var commentLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -47,5 +50,21 @@ class PostTableViewCell: UITableViewCell {
             let buttonImage = UIImage(named: "like_none")
             self.likeButton.setImage(buttonImage, for: UIControlState.normal)
         }
+        var post = [String]()
+        for comment in postData.comments {
+            let userName = comment["userName"]
+            let commentText = comment["comment"]
+            let nameComment = "\(String(describing: userName!)) : \(String(describing: commentText!))"
+            post.append(nameComment)
+        }
+        
+        self.commentLabel.text = post.joined(separator: "\n")
+        
+        commentButton.addTarget(self, action: #selector(PostTableViewCell.comment), for: UIControlEvents.touchUpInside)
+    }
+    
+    //投稿ボタンが押されたらキーボードを閉じる
+    func comment(){
+        commentTextField.resignFirstResponder()
     }
 }
